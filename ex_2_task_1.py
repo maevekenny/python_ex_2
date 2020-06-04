@@ -34,12 +34,43 @@
 # As proof, please manually copy/paste the console output for one run into a file called
 # results1.txt
 
-def is_valid_email_address(s):
+# Function to check if email_address is valid
+# input s (string) the email address
+# return (boolean, message)
+def is_valid_email_address(s):    
+    # Check for @ symbol
+    at_symbol_position = s.count("@")
     
-    # your code here
-
+    if at_symbol_position != 1:
+        return 1, "Must have @!"
     
+    split_string = s.split("@")
+    name, domain = split_string[0], split_string[1]
 
+    # Domain needs to have one period
+    if domain.count(".") != 1:
+        return 2, "domain can only have one period"
+    
+    # Split the website & the top level domain
+    website, tld = domain.split(".")
+
+    # Validate the email name
+    if len(name) < 3 or len(name) > 16: 
+        return 3, "email name must have minimum of 3 & max of 16 characters"
+    elif name.isalnum() == False:
+        return 4, "email must not have special characters"
+
+    # Validate the website
+    if len(website) < 2 or len(website) > 8:
+        return 5, "website must have minimum of 2 & max of 8 characters"
+    elif website.isalnum() == False:
+        return 6, "website must not have special characters"
+
+    # Validate the top level domain
+    if tld not in ["com", "edu", "org", "gov"]: 
+        return 7, "Should be one of the following: com, edu, org, gov"
+
+    return None, "This is a good email address"
 
     
 
