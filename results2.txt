@@ -1,0 +1,17 @@
+$ python ex_2_task_2.py
+email address?mae@gmail
+mae@gmail is invalid!
+Reason: domain can only have one period
+Try again, 2 attempts left
+email address?maevekenny2.cmo
+maevekenny2.cmo is invalid!
+Reason: Must have @!
+Try again, 1 attempts left
+email address?m@test.com
+No attempts left, bailing out
+invalid email m@test.com
+
+$ python ex_2_task_2.py
+email address?maevekenny210@gmail.com
+maevekenny210@gmail.com is valid!
+valid email maevekenny210@gmail.com
